@@ -14,3 +14,6 @@ deploy:
   project: ./build/
 on:
   branch: master
+env:
+  SURGE_TOKEN: d07641d4d8d0dfccb4eee665379dadcc
+  SURGE_LOGIN: sabaudi@gmail.com
