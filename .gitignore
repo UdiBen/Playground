@@ -6,6 +6,9 @@ target/*
 .classpath
 .project
 
+build/*
+node-module/*
+
 # Compiled source #
 ###################
 *.com
