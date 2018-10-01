@@ -4,7 +4,9 @@
   "private": true,
   "homepage": "https://UdiBen.github.io/Playground/",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "gh-pages": "^2.0.0",
+    "moment": "^2.22.2",
     "prop-types": "latest",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
