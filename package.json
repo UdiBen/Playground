@@ -6,6 +6,7 @@
   "dependencies": {
     "dateformat": "^3.0.3",
     "gh-pages": "^2.0.0",
+    "google-maps-react": "^2.0.2",
     "moment": "^2.22.2",
     "prop-types": "latest",
     "react": "^16.5.2",

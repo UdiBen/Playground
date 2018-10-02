@@ -6,7 +6,8 @@ class WeatherGraph extends Component {
     constructor() {
         super();
         this.state = {
-            weatherData: []
+            weatherData: [],
+            loading: true
         }
     }
 
@@ -50,8 +51,8 @@ class WeatherGraph extends Component {
             })
         }).then(results => results.json())
             .then(result => {
-                let data = result.map(x=> [ WeatherGraph.formatTime(x), x.wind_speed.value]);
-                this.setState({weatherData: fix(data)});
+                let data = result.map(x => [WeatherGraph.formatTime(x), x.wind_speed.value]);
+                this.setState({weatherData: fix(data), loading: false});
             });
     }
 
@@ -60,8 +61,12 @@ class WeatherGraph extends Component {
     }
 
     render() {
-        return (
-            <div className={"wind-chart"}>
+        let renderingData;
+        if (this.state.loading) {
+            renderingData = <img src={require('../images/spinner.gif')}/>
+        }
+        else {
+            renderingData = <div className={"wind-chart"}>
                 <Chart
                     chartType="LineChart"
                     data={this.state.weatherData}
@@ -70,6 +75,9 @@ class WeatherGraph extends Component {
                     legendToggle
                 />
             </div>
+        }
+        return (
+            [renderingData]
         );
     }
 }
