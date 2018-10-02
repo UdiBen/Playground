@@ -50,13 +50,13 @@ class WeatherGraph extends Component {
             })
         }).then(results => results.json())
             .then(result => {
-                let data = result.map(x=> [ this.formatTime(x), x.wind_speed.value]);
+                let data = result.map(x=> [ WeatherGraph.formatTime(x), x.wind_speed.value]);
                 this.setState({weatherData: fix(data)});
             });
     }
 
-    formatTime(x) {
-        return moment(x.observation_time.value).format("HH:MM:ss");
+    static formatTime(x) {
+        return moment(x.observation_time.value).format("HH:00:00");
     }
 
     render() {
